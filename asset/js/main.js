@@ -30,20 +30,17 @@ console.log(priceTiket);
 
 
 
-let discountPrice;
+let discountPrice = priceTiket;
 
 
 // va applicato uno sconto del 20% per i minorenni
 if (userAge < 18) {
     discountPrice = priceTiket * 0.8
 // va applicato uno sconto del 40% per gli over 65.
-} else if (userAge >=65) {
+} else if (userAge >= 65) {
     discountPrice = priceTiket * 0.6
-}
-// prezzo per età dai 18 fino a 65 anni
-else {
-    discountPrice = priceTiket
-}
+};
+
 // stampare il prezzo in forma decimale.
 const endPrice = discountPrice.toFixed(2);
 console.log(endPrice);
