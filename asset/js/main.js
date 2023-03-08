@@ -17,7 +17,7 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 // modulus
 
 // chiedere età e i km da percorrere.
-const userAge = prompt("Quale è la tua età?");
+const userAge = parseInt(prompt("Quale è la tua età?"));
 const kmTravel = prompt("Quanti km dovrai percorrere?");
 
 // caricare consol.log
@@ -29,15 +29,22 @@ const priceTiket = kmTravel * 0.21;
 console.log(priceTiket);
 
 
-const endPrice = ()
+
+let discountPrice;
+
+
 // va applicato uno sconto del 20% per i minorenni
-// applicare sconto se minorenne 
-if (userAge > 18 ) { 
-    endPrice = priceTiket * 0,8 
-} else if (userAge <= 18) {
-    endPrice = priceTiket 
+if (userAge < 18) {
+    discountPrice = priceTiket * 0.8
+// va applicato uno sconto del 40% per gli over 65.
+} else if (userAge >=65) {
+    discountPrice = priceTiket * 0.6
+}
+else {
+    discountPrice = priceTiket
 }
 
+const endPrice = discountPrice.toFixed(2);
 
-// applicare sconto per over 65.
+console.log(endPrice);
 //stampare il prezzo in forma decimale.
