@@ -40,11 +40,15 @@ if (userAge < 18) {
 } else if (userAge >=65) {
     discountPrice = priceTiket * 0.6
 }
+// prezzo per età dai 18 fino a 65 anni
 else {
     discountPrice = priceTiket
 }
-
+// stampare il prezzo in forma decimale.
 const endPrice = discountPrice.toFixed(2);
-
 console.log(endPrice);
-//stampare il prezzo in forma decimale.
+
+
+document.getElementById("price_tiket").innerHTML = `Questo è il prezzo del biglietto: ${endPrice}€` 
+
+
