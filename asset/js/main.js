@@ -46,6 +46,8 @@ const endPrice = discountPrice.toFixed(2);
 console.log(endPrice);
 
 
-document.getElementById("price_tiket").innerHTML = `Questo è il prezzo del biglietto: ${endPrice}€` 
-
-
+if (isNaN(endPrice)) {
+    alert('ciao, devi inserire nei campi dei numeri e non dei testi!!!')
+} else {
+    document.getElementById("price_tiket").innerHTML = `Questo è il prezzo del biglietto: ${endPrice}€` 
+}
